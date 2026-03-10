@@ -6,17 +6,13 @@
 #include <iomanip>
 #include <stdexcept>
 
-// ─────────────────────────────────────────────
 // Helpers / internal
-// ─────────────────────────────────────────────
 
 static void printDivider(char c = '-', int width = 50) {
     std::cout << std::string(width, c) << "\n";
 }
 
-// ─────────────────────────────────────────────
 // Constructor / Destructor
-// ─────────────────────────────────────────────
 
 Library::Library(const std::string& filePath)
     : nextId(1), dataFilePath(filePath)
@@ -28,9 +24,7 @@ Library::~Library() {
     saveToFile();
 }
 
-// ─────────────────────────────────────────────
 // Private: file I/O
-// ─────────────────────────────────────────────
 
 void Library::loadFromFile() {
     std::ifstream file(dataFilePath);
@@ -64,9 +58,7 @@ int Library::generateId() {
     return nextId++;
 }
 
-// ─────────────────────────────────────────────
 // Public: addBook
-// ─────────────────────────────────────────────
 
 void Library::addBook(const std::string& title, const std::string& author) {
     int id = generateId();
@@ -80,9 +72,7 @@ void Library::addBook(const std::string& title, const std::string& author) {
     printDivider();
 }
 
-// ─────────────────────────────────────────────
 // Public: listBooks
-// ─────────────────────────────────────────────
 
 void Library::listBooks() const {
     printDivider('=');
@@ -103,9 +93,7 @@ void Library::listBooks() const {
     }
 }
 
-// ─────────────────────────────────────────────
 // Public: borrowBook
-// ─────────────────────────────────────────────
 
 bool Library::borrowBook(int id) {
     auto it = books.find(id);
@@ -123,9 +111,7 @@ bool Library::borrowBook(int id) {
     return true;
 }
 
-// ─────────────────────────────────────────────
 // Public: returnBook
-// ─────────────────────────────────────────────
 
 bool Library::returnBook(int id) {
     auto it = books.find(id);
@@ -143,9 +129,7 @@ bool Library::returnBook(int id) {
     return true;
 }
 
-// ─────────────────────────────────────────────
 // Public: searchBookByTitle
-// ─────────────────────────────────────────────
 
 void Library::searchBookByTitle(const std::string& query) const {
     // Case-insensitive search
@@ -177,9 +161,7 @@ void Library::searchBookByTitle(const std::string& query) const {
     }
 }
 
-// ─────────────────────────────────────────────
 // Public: utility
-// ─────────────────────────────────────────────
 
 bool        Library::isEmpty()       const { return books.empty(); }
 std::size_t Library::totalBooks()    const { return books.size(); }
