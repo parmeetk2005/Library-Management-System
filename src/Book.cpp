@@ -4,9 +4,7 @@
 #include <vector>
 #include <stdexcept>
 
-// ─────────────────────────────────────────────
 // Constructors
-// ─────────────────────────────────────────────
 
 Book::Book()
     : id(0), title(""), author(""), borrowed(false) {}
@@ -14,26 +12,20 @@ Book::Book()
 Book::Book(int id, const std::string& title, const std::string& author)
     : id(id), title(title), author(author), borrowed(false) {}
 
-// ─────────────────────────────────────────────
 // Getters
-// ─────────────────────────────────────────────
 
 int                Book::getId()      const { return id; }
 const std::string& Book::getTitle()   const { return title; }
 const std::string& Book::getAuthor()  const { return author; }
 bool               Book::isBorrowed() const { return borrowed; }
 
-// ─────────────────────────────────────────────
 // Setters
-// ─────────────────────────────────────────────
 
 void Book::setTitle(const std::string& t)  { title  = t; }
 void Book::setAuthor(const std::string& a) { author = a; }
 void Book::setBorrowed(bool status)        { borrowed = status; }
 
-// ─────────────────────────────────────────────
 // Display
-// ─────────────────────────────────────────────
 
 void Book::display() const {
     std::string status = borrowed ? "[ BORROWED ]" : "[ Available ]";
@@ -43,9 +35,7 @@ void Book::display() const {
               << "  Status : " << status        << "\n";
 }
 
-// ─────────────────────────────────────────────
 // Serialization  (format: id|title|author|borrowed)
-// ─────────────────────────────────────────────
 
 std::string Book::serialize() const {
     return std::to_string(id)    + "|" +
