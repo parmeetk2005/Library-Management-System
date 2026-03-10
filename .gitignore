@@ -1,0 +1,9 @@
+library_system
+*.o
+*.out
+*.exe
+.vscode/
+.idea/
+build/
+.DS_Store
+Thumbs.db

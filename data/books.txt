@@ -1,0 +1,7 @@
+1|The Pragmatic Programmer|Andrew Hunt & David Thomas|0
+2|Clean Code|Robert C. Martin|0
+3|Design Patterns|Gang of Four|1
+4|The Mythical Man-Month|Fred Brooks|0
+5|Introduction to Algorithms|Cormen et al.|0
+6|Effective C++|Scott Meyers|0
+7|Verity|Colleen Hoover|0
