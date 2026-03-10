@@ -4,9 +4,7 @@
 #include <limits>
 #include <sstream>
 
-// ─────────────────────────────────────────────
 // UI helpers
-// ─────────────────────────────────────────────
 
 static void pause() {
     std::cout << "\n  Press ENTER to continue...";
@@ -28,9 +26,7 @@ static void printHeader() {
     std::cout << "\n";
 }
 
-// ─────────────────────────────────────────────
 // Safe integer input
-// ─────────────────────────────────────────────
 
 static int readInt(const std::string& prompt) {
     int value;
@@ -63,9 +59,7 @@ static std::string readString(const std::string& prompt) {
     }
 }
 
-// ─────────────────────────────────────────────
 // Menu handlers
-// ─────────────────────────────────────────────
 
 static void handleAddBook(Library& lib) {
     std::cout << "\n  ── Add New Book ──\n";
@@ -97,9 +91,7 @@ static void handleSearchBook(const Library& lib) {
     lib.searchBookByTitle(query);
 }
 
-// ─────────────────────────────────────────────
 // Main
-// ─────────────────────────────────────────────
 
 int main() {
     Library library("data/books.txt");
